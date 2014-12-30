@@ -2,12 +2,29 @@
 	"employees": [
 
 		{
-			"name" : "Samuel"
+			"name" : "Samuel",
+			"image" : "samuel.jpg",
+			"number" : 231
 		},
 
 		{
 
-			"name" : "Sam"
+			"name" : "Kirst",
+			"number" : 226
+
+		},
+
+		{
+
+			"name" : "Jo",
+			"number" : 222
+
+		},
+
+		{
+
+			"name" : "Rose",
+			"number" : 245
 
 		}
 
