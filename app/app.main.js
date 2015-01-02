@@ -1,13 +1,13 @@
 var app = angular.module('AOP', []);
 
-app.controller('AOPMain', ['$scope', '$http', function($scope, $http) {
+app.controller('AOPMain', ['$scope', '$http', 'employeeService', function($scope, $http, employeeService) {
 
-	$scope.getUsers = function() {
+	employeeService.getEmployees($scope, $http);
 
-		getUsers($scope, $http);
+	$scope.sortEmployees = function(by) {
+
+		employeeService.sortEmployees($scope, by);
 
 	}
-
-	getUsers($scope, $http);
 
 }]);
