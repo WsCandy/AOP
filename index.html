@@ -6,16 +6,16 @@
 			<link rel="stylesheet" href="/assets/css/op.css" />
 		</head>
 
+		<button ng-click="sortEmployees('name')">Name</button>
+		<button ng-click="sortEmployees('number')">Number</button>
+
+		<input type="text" ng-model="searchEmployees" placeholder="Enter your search terms" />
 
 		<div ng-repeat="employee in employees">
 			<img ng-src="/assets/img/employees/{{(employee.image | lowercase) || 'default.jpg'}}" alt="{{employee.name}}">
 			<p>{{employee.name}}</p>
 			<p>{{employee.number}}</p>
 		</div>
-
-		<button ng-click="sortEmployees('name')">Name</button>
-		<button ng-click="sortEmployees('number')">Number</button>
-
 
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 		<script>window.angular || document.write('<script src="/assets/js/lib/angular-1.3.5.min.js"><\/script>')</script>

@@ -32,7 +32,7 @@ app.service('employeeService', function() {
 
 		}
 
-		$scope.employees = sortedEmployees;	
+		$scope.employees = sortedEmployees;
 
 	}
 

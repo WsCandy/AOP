@@ -11,3 +11,13 @@ app.controller('AOPMain', ['$scope', '$http', 'employeeService', function($scope
 	}
 
 }]);
+
+app.filter('searchEmployees', function() {
+
+		console.log($scope);
+	return function(arr, searchEmployees) {
+
+
+	}
+
+});
