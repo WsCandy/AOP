@@ -19,7 +19,9 @@ body {
   float: left;
   width: 20%;
   margin-right: 0;
-  position: relative; }
+  position: relative;
+  border-right: 1px solid #272725;
+  border-bottom: 1px solid #272725; }
   .employee:nth-of-type(5n+0), .employee.last {
     margin-right: 0; }
   .employee__img--small {

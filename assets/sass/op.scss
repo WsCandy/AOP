@@ -74,6 +74,8 @@ body {
 	float: left;
 	@include width(5, 0);
 	position: relative;
+	border-right: 1px solid #272725;
+	border-bottom: 1px solid #272725;
 
 	&__img {
 
