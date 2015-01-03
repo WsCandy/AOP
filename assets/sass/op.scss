@@ -1,3 +1,47 @@
+@mixin width($count, $margin) {
+
+	width: (1 / $count * 100%) - $margin + ($margin / $count);
+	margin-right: $margin;
+	
+	&:nth-of-type(#{($count)+"n+0"}), &.last, {
+		
+		margin-right: 0;
+		
+	}
+
+}
+
+@mixin mq($value, $axis: false) {
+
+	@if $axis {
+
+		@media screen and ("max-"+$axis: $value) {
+
+			@content;
+
+		}
+
+	} @else {
+
+		@media screen and (max-width: $value) {
+
+			@content;
+
+		}
+		
+	}
+
+}
+
+@mixin font-size($value) {
+
+	$rem : $value / 16;
+
+	font-size: $value+px;
+	font-size: $rem+rem;
+
+}
+
 * {
 
 	-webkit-font-smooth: antialiased;
@@ -7,5 +51,107 @@
 
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+
+}
+
+body {
+
+	font-family: "Trebuchet MS", "sans-serif";
+	color: #e5e4e4;
+
+}
+
+.employee__container {
+
+	float: left;
+	width: 100%;
+	clear: both;
+
+}
+
+.employee {
+
+	float: left;
+	@include width(5, 0);
+	position: relative;
+
+	&__img {
+
+		&--small {
+
+			width: 65%;
+			overflow: hidden;
+			display: block;
+			margin: 0 auto;
+			border-radius: 50%;
+			position: absolute;
+
+			top: 50%;
+			left: 50%;
+
+			-webkit-transform: translateY(-50%) translateX(-50%);
+
+			&:before {
+
+				content: '';
+				display: block;
+				padding-top: 100%;
+
+			}
+
+			img {
+
+				width: 125%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				-webkit-transform: translateX(-50%) translateY(-50%);
+
+			}
+			
+		}
+
+		&--bg {
+
+			width: 100%;
+			float: left;
+			
+		}
+
+	}
+
+	&__info {
+
+		background: rgba(0, 0, 0 ,0.70);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		padding: 10px;
+
+	}
+
+	&__number {
+
+		color: #272725;
+		display: inline-block;
+		position: absolute;
+		bottom: 12%;
+		left: 50%;
+		text-align: center;
+		width: 80px;
+
+		background: #e5e4e4;
+		padding: 10px;
+
+		border-radius: 15px;
+
+		-webkit-transform: translateX(-50%);
+
+	}
 
 }
