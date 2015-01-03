@@ -14,10 +14,26 @@ app.controller('AOPMain', ['$scope', '$http', 'employeeService', function($scope
 
 app.filter('searchEmployees', function() {
 
-		console.log($scope);
-	return function(arr, searchEmployees) {
+	return function(arr, findEmployee) {
 
+		var results = [];
 
+		if(!findEmployee) {
+
+			return arr;
+
+		}
+
+		angular.forEach(arr, function(employee) {
+
+			if(employee['name'].toLowerCase().indexOf(findEmployee.toLowerCase()) !== -1 || String(employee['number']).indexOf(String(findEmployee)) !== -1)
+
+				results.push(employee);
+
+		});
+
+		return results;
+		
 	}
 
 });
