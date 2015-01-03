@@ -17,11 +17,11 @@
 				<div class="employee__info">
 					<p>{{employee.name}}</p>
 					<div class="employee__img--small">
-						<img ng-src="assets/img/employees/{{(employee.image | lowercase) || 'default.jpg'}}" alt="{{employee.name}}">
+						<img ng-src="assets/img/employees/{{(employee.image | lowercase) || 'default'}}.jpg" alt="{{employee.name}}">
 					</div>
-					<p class="employee__number">{{employee.number}}</p>					
+					<p class="employee__number">{{employee.number}}</p>
 				</div>
-				<img ng-src="assets/img/favourites/{{(employee.image | lowercase) || 'default.jpg'}}" alt="{{employee.name}}" class="employee__img--bg">
+				<img ng-src="assets/img/favourites/{{(employee.image | lowercase) || employee.office}}.jpg" alt="{{employee.name}}" class="employee__img--bg">
 			</div>
 
 		</div>
