@@ -26,14 +26,19 @@ app.filter('searchEmployees', function() {
 
 		angular.forEach(arr, function(employee) {
 
-			if(employee['name'].toLowerCase().indexOf(findEmployee.toLowerCase()) !== -1 || String(employee['number']).indexOf(String(findEmployee)) !== -1)
+			var searchBy =
+				employee['name'].toLowerCase().indexOf(findEmployee.toLowerCase()) !== -1 || 
+				String(employee['number']).indexOf(String(findEmployee)) !== -1 || 
+				String(employee['office'].toLowerCase()).indexOf(findEmployee.toLowerCase()) !== -1
+
+			if(searchBy)
 
 				results.push(employee);
 
 		});
 
 		return results;
-		
+
 	}
 
 });
